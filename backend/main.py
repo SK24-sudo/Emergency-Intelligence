@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from database import init_database
-from routes import alerts, assets, dispatch, incidents, missions, persons
+from routes import ai, alerts, assets, dispatch, incidents, missions, persons
 
 
 app = FastAPI(title="Emergency Intelligence Backend")
@@ -39,3 +39,4 @@ app.include_router(assets.router, prefix="/assets", tags=["assets"])
 app.include_router(missions.router, prefix="/missions", tags=["missions"])
 app.include_router(persons.router, prefix="/persons", tags=["persons"])
 app.include_router(dispatch.router, prefix="/dispatch", tags=["dispatch"])
+app.include_router(ai.router, prefix="/ai", tags=["ai"])
